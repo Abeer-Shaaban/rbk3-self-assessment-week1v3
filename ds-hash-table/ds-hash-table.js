@@ -11,6 +11,19 @@ var makeHashTable = function() {
       insert: function(key, value) {
         //your code is here
         var index = hashFn(key, max);
+        var bucket = this._storage[index] || [];
+
+        for(var i=0 ; i<bucket.length ; i++){
+        	var tuple = bucket[i];
+        	if(tuple[0]===key){
+        		tuple[1]===value;
+        	}
+        	else{
+        		var newTuple=[key , value];
+        		bucket.push(newTuple);
+        	}
+        }
+
         if(._storage[index].length < 4){
         this._storage[hashFn(key, max)] = value;
         }
