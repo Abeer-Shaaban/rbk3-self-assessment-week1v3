@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title>Your Favorite Cities</title>
+
+		<style type="text/css">
+			body{
+				background-color: #b3ccff;
+			}
+			#f{
+				color: blue;
+				font-size: 20px;
+				font-weight: bold;
+				margin-top: 25px;
+    			margin-bottom: 10px;
+				margin-right: 150px;
+   				margin-left: 550px;
+			}
+			#inp{
+				height: 100px
+			}
+			#btn{
+				margin-top: 5px;
+    			margin-bottom: 500px;
+				margin-right: 150px;
+   				margin-left: 600px;
+			}
+			#btn{
+				width: 70px;
+				height: 30px;
+				background-color: blue;
+				font-weight: bold;
+				font-size: 20px;
+				color: white;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<img src="img.png" width="1340px" height="300px" id="image">
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+
+        <!-- create react component -->
+        <script type=type="text/babel">
+        	var city = React.creatClass({
+        		initState: function(){
+        			return({cities: []});
+        		},
+
+        		render: function(){
+        			var cities = this.state.cities;
+        			cities = cities.map(function(city , indx){
+        				return(
+        					<ul key={indx}>
+        						<li className="yourCity">{city.yourCity}</li>
+        						<li className="image"><img src={city.image}></li>
+        						<li className=info>{city.info}</li>
+        					</ul>
+        				)
+        			})
+        		}
+        	});
+        </script>
+        
+		<form id="f" action="/" method="post">
+		  Your City:<br>
+		  <input type="text" name="yourCity" ><br>
+		  Image:<br>
+		  <input type="text" name="image" ><br>
+		  Information:<br>
+		  <input type="text" name="info" id="inp">
+		</form>
+
+		<button id="btn">View</button>
+		<script type="text/javascript"></script>
+	</body>
+</html>
